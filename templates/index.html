@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>sample cards</title>
+	<link rel="stylesheet" href="layout.css">
+	<link rel="stylesheet" href="card.css">
+	<link rel="stylesheet" href="answer.css">
+	<link rel="stylesheet" href="select.css">
+</head>
+<body>
+	<div class="container">
+  <section class="card">
+    <h1 class="card__title">Question title</h1>
+    <p class="card__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, numquam, quam. Eligendi ipsum quidem dolores ipsam fugiat aliquam qui dolorum repudiandae ad, labore, sequi, ea impedit animi ducimus ut nobis?</p>
+     <label class="answer answer--checkbox" data-correct="true"> 
+       <!-- add data-correct="true"attribute if answer is correct -->
+      Some wery long long long long long long long long long question
+      <input type="checkbox" checked="checked"/>
+      <div class="answer__indicator"></div>
+    </label>
+    <label class="answer answer--checkbox">Second answer
+      <input type="checkbox"/>
+      <div class="answer__indicator"></div>
+    </label>
+    <label class="answer answer--checkbox">Disabled answer
+      <input type="checkbox" disabled="disabled"/>
+      <div class="answer__indicator"></div>
+    </label>
+    <label class="answer answer--checkbox">Disabled & checked answer
+      <input type="checkbox" disabled="disabled" checked="checked"/>
+      <div class="answer__indicator"></div>
+    </label>
+  </section>
+  
+  <section class="card">
+    <h1 class="card__title">Choose one option</h1>
+    <p class="card__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea expedita magnam libero ut autem aperiam velit minus nobis recusandae modi adipisci, voluptatem minima error deleniti ratione asperiores illum molestiae quaerat.</p>
+    <label class="answer answer--radio">First radio
+      <input type="radio" name="radio" checked="checked"/>
+      <div class="answer__indicator"></div>
+    </label>
+    <label class="answer answer--radio" data-correct="false">
+      <!-- add data-correct="false" attribute if answer is wrong -->
+      Second radio
+      <input type="radio" name="radio"/>
+      <div class="answer__indicator"></div>
+    </label>
+    <label class="answer answer--radio">Disabled
+      <input type="radio" name="radio2" disabled="disabled"/>
+      <div class="answer__indicator"></div>
+    </label>
+    <label class="answer answer--radio">Disabled & checked
+      <input type="radio" name="radio2" disabled="disabled" checked="checked"/>
+      <div class="answer__indicator"></div>
+    </label>
+  </section>
+
+  <section class="card">
+    <h1 class="card__title">Set right order</h1>
+    <p class="card__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea expedita magnam libero ut autem aperiam velit minus nobis recusandae modi adipisci, voluptatem minima error deleniti ratione asperiores illum molestiae quaerat.</p>
+    <div class="select" data-correct="true">
+      <select>
+        <option>First select</option>
+        <option>Option</option>
+        <option>Option</option>
+      </select>
+      <div class="select__arrow"></div>
+    </div>
+    <div class="select" data-correct="false">
+      <select>
+        <option>Second select</option>
+        <option>Option</option>
+        <option>Option</option>
+      </select>
+      <div class="select__arrow"></div>
+    </div>
+    <div class="select">
+      <select disabled="disabled">
+        <option>Disabled</option>
+        <option>Option</option>
+        <option>Option</option>
+      </select>
+      <div class="select__arrow"></div>
+    </div>
+  </div>
+</section>
+	
+</body>
+</html>
