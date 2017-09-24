@@ -380,6 +380,8 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+var pParseHash = Symbol('parse hash');
+
 var Router = function () {
     function Router(node) {
         _classCallCheck(this, Router);
@@ -394,17 +396,36 @@ var Router = function () {
             this.views[url] = view;
             console.log(url, view);
         }
+
+        /**
+         * Метод парсит хеш по шаблону
+         * Например #questions/1234/1234,
+         * будет преобразован в следующий объект
+         *  {
+         *      id: #questions,
+         *      args: [1234, 1234]
+         *  }
+         * @param hash
+         * @return {Object}
+         */
+
+    }, {
+        key: pParseHash,
+        value: function value(hash) {
+            return { id: hash, args: [] };
+        }
     }, {
         key: 'onRoute',
         value: function onRoute(hash) {
-            var view = this.views[hash];
+            var params = this[pParseHash](hash);
+            var view = this.views[params.id];
 
             if (this.current) {
                 this.current.toggle(false);
             }
 
             if (view) {
-                view.toggle(true);
+                view.toggle(true, params.args);
                 this.current = view;
             }
         }
@@ -520,7 +541,7 @@ var VResults = function (_View) {
         key: 'render',
         value: function render() {
             this.node.innerHTML = (0, _results2.default)({
-                result: 1000
+                result: 800
             });
         }
     }]);
@@ -589,7 +610,7 @@ module.exports = template;
 
 var pug = __webpack_require__(0);
 
-function template(locals) {var pug_html = "", pug_mixins = {}, pug_interp;;var locals_for_with = (locals || {});(function (result) {pug_html = pug_html + "\u003Cdiv class=\"results\"\u003E\u003Ch2\u003EПоздравляем вы прошли тест\u003C\u002Fh2\u003E\u003Cdiv class=\"results__count\"\u003E" + (pug.escape(null == (pug_interp = result) ? "" : pug_interp)) + "\u003C\u002Fdiv\u003E\u003Cdiv class=\"results__navigate\"\u003E\u003Ca href=\"#question\"\u003EК вопросам\u003C\u002Fa\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E";}.call(this,"result" in locals_for_with?locals_for_with.result:typeof result!=="undefined"?result:undefined));;return pug_html;};
+function template(locals) {var pug_html = "", pug_mixins = {}, pug_interp;;var locals_for_with = (locals || {});(function (result) {pug_html = pug_html + "\u003Cdiv class=\"results\"\u003E\u003Ch2\u003EПоздравляем не вы прошли тест\u003C\u002Fh2\u003E\u003Cdiv class=\"results__count\"\u003E" + (pug.escape(null == (pug_interp = result) ? "" : pug_interp)) + "\u003C\u002Fdiv\u003E\u003Cdiv class=\"results__navigate\"\u003E\u003Ca href=\"#question\"\u003EК вопросам\u003C\u002Fa\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E";}.call(this,"result" in locals_for_with?locals_for_with.result:typeof result!=="undefined"?result:undefined));;return pug_html;};
 module.exports = template;
 
 /***/ }),

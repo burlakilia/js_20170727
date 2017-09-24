@@ -13,4 +13,4 @@ window.addEventListener('DOMContentLoaded', () => {
     router.register('#results', new VResults(document.querySelector('.js-results')));
     router.start();
 });
-
+ 

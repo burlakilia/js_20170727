@@ -1,3 +1,4 @@
+
 /* code from here https://codepen.io/KenanYusuf/pen/PZKEKd */
 
 .answer {
@@ -6,17 +7,38 @@
   padding-left: 35px;
   padding-top: 3px;
   padding-bottom: 3px;
+  padding-right: 5px;
   margin-bottom: 15px;
   cursor: pointer;
   font-size: 18px;
-}
-/* change label background if answer correct */
-.answer[data-correct="true"] {
-  background-color: lightgreen;
-}
+  border-radius: 3px;
 
-.answer[data-correct="false"] {
-  background-color: salmon;
+  /* change label background if answer correct */
+  &[data-correct="true"] {
+    background-color: lightgreen;
+  }
+
+  &[data-correct="false"] {
+    background-color: salmon;
+  }
+
+  /* styles for custom checkbox */
+  &__indicator {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    height: 20px;
+    width: 20px;
+    background: #e6e6e6;
+    border-radius: 2px;
+
+    /* define common styles foa all types of custom marks */
+    &:after {
+      content: '';
+      position: absolute;
+      display: none;
+    }
+  }
 }
 
 /* hide real input */
@@ -26,28 +48,11 @@
   opacity: 0;
 }
 
-/* styles for custom checkbox */
-.answer__indicator {
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  height: 20px;
-  width: 20px;
-  background: #e6e6e6;
-  border-radius: 2px;
-}
-
 /* define round base of radiobuttons */
 .answer--radio .answer__indicator {
   border-radius: 50%;
 }
 
-/* define common styles foa all types of custom marks */
-.answer__indicator:after {
-  content: '';
-  position: absolute;
-  display: none;
-}
 
 /* draw a mark for checkbox */
 .answer--checkbox .answer__indicator:after {
@@ -107,4 +112,3 @@
 .answer--radio input:disabled ~ .answer__indicator:after {
   background: #7b7b7b;
 }
-
