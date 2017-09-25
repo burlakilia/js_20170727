@@ -1,0 +1,24 @@
+
+.question {
+  display: block;
+  vertical-align: top;
+  background: #fff;
+  text-align: left;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  max-width: 300px;
+  border-radius: 5px;
+  margin: 10px;
+
+  &__title {
+    font-weight: 500;
+    margin-top: 0;
+  }
+
+  &__text::after {
+    display: block;
+    content: '';
+    margin-top: 16px;
+    border-bottom: 1px solid lightgrey;
+  }
+}

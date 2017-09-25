@@ -3,14 +3,14 @@ import template from './question.pug';
 
 export default class VQuestion extends View{
 
-    constructor(node) {
-        super(node);
-    }
+  constructor(node) {
+    super(node);
+  }
 
-    render(state) {
-        this.node.innerHTML = template({
-            number: 1
-        });
-    }
+  render(state) {
+    this.node.innerHTML = template({
+      number: 1
+    });
+  }
 
 }

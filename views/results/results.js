@@ -9,7 +9,7 @@ export default class VResults extends View{
 
     render() {
         this.node.innerHTML = template({
-            result: 1000
+            result: 800
         });
     }
 
