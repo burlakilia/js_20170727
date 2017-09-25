@@ -1,4 +1,4 @@
-import template from './question.pug';
+import template from './uiquestion.pug';
 import UIBlock from '../uiblock'
 
 export default class UIQuestion extends UIBlock{

@@ -9,6 +9,11 @@ export default class UIAnswer extends UIBlock {
     this.answerType = "checkbox";
     this.answerName = "name";
     this.answerChecked = "false";
+
+
+    node.addEventListener('click', (event) => {
+      this.onChoice(event.target.value);
+    })
   }
 
   render() {

@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -301,7 +301,7 @@ function pug_rethrow(err, filename, lineno, str){
     throw err;
   }
   try {
-    str = str || __webpack_require__(9).readFileSync(filename, 'utf8')
+    str = str || __webpack_require__(15).readFileSync(filename, 'utf8')
   } catch (ex) {
     pug_rethrow(err, null, lineno)
   }
@@ -329,6 +329,40 @@ function pug_rethrow(err, filename, lineno, str){
 
 /***/ }),
 /* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var UIBlock = function () {
+    function UIBlock(node) {
+        _classCallCheck(this, UIBlock);
+
+        this.node = node;
+    }
+
+    _createClass(UIBlock, [{
+        key: "render",
+        value: function render(data) {
+            console.log(data);
+        }
+    }]);
+
+    return UIBlock;
+}();
+
+exports.default = UIBlock;
+
+/***/ }),
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -366,7 +400,7 @@ var View = function () {
 exports.default = View;
 
 /***/ }),
-/* 2 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -448,58 +482,6 @@ var Router = function () {
 exports.default = Router;
 
 /***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _view = __webpack_require__(1);
-
-var _view2 = _interopRequireDefault(_view);
-
-var _question = __webpack_require__(7);
-
-var _question2 = _interopRequireDefault(_question);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var VQuestion = function (_View) {
-  _inherits(VQuestion, _View);
-
-  function VQuestion(node) {
-    _classCallCheck(this, VQuestion);
-
-    return _possibleConstructorReturn(this, (VQuestion.__proto__ || Object.getPrototypeOf(VQuestion)).call(this, node));
-  }
-
-  _createClass(VQuestion, [{
-    key: 'render',
-    value: function render(state) {
-      this.node.innerHTML = (0, _question2.default)({
-        number: 1
-      });
-    }
-  }]);
-
-  return VQuestion;
-}(_view2.default);
-
-exports.default = VQuestion;
-
-/***/ }),
 /* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -512,11 +494,92 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _view = __webpack_require__(1);
+var _view = __webpack_require__(2);
 
 var _view2 = _interopRequireDefault(_view);
 
-var _results = __webpack_require__(8);
+var _question = __webpack_require__(13);
+
+var _question2 = _interopRequireDefault(_question);
+
+var _uiquestion = __webpack_require__(9);
+
+var _uiquestion2 = _interopRequireDefault(_uiquestion);
+
+var _uianswer = __webpack_require__(8);
+
+var _uianswer2 = _interopRequireDefault(_uianswer);
+
+var _quiz = __webpack_require__(10);
+
+var _quiz2 = _interopRequireDefault(_quiz);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var VQuestion = function (_View) {
+    _inherits(VQuestion, _View);
+
+    function VQuestion(node) {
+        _classCallCheck(this, VQuestion);
+
+        var _this = _possibleConstructorReturn(this, (VQuestion.__proto__ || Object.getPrototypeOf(VQuestion)).call(this, node));
+
+        _this.model = new _quiz2.default();
+        return _this;
+    }
+
+    _createClass(VQuestion, [{
+        key: 'render',
+        value: function render(state) {
+            var _this2 = this;
+
+            this.node.innerHTML = (0, _question2.default)({
+                number: 1
+            });
+
+            this.model.fetch().then(function (data) {
+                console.log(data);
+
+                var quest = new _uiquestion2.default(_this2.node.querySelector('.js-info'), {});
+
+                var answers = new _uianswer2.default(_this2.node.querySelector('.js-options'), {});
+
+                answers.onChoice = function (val) {
+                    console.log('user choice is', val);
+                };
+            });
+        }
+    }]);
+
+    return VQuestion;
+}(_view2.default);
+
+exports.default = VQuestion;
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _view = __webpack_require__(2);
+
+var _view2 = _interopRequireDefault(_view);
+
+var _results = __webpack_require__(14);
 
 var _results2 = _interopRequireDefault(_results);
 
@@ -552,7 +615,7 @@ var VResults = function (_View) {
 exports.default = VResults;
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var pug = __webpack_require__(0);
@@ -561,25 +624,25 @@ function template(locals) {var pug_html = "", pug_mixins = {}, pug_interp;pug_ht
 module.exports = template;
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _question = __webpack_require__(3);
+var _question = __webpack_require__(4);
 
 var _question2 = _interopRequireDefault(_question);
 
-var _results = __webpack_require__(4);
+var _results = __webpack_require__(5);
 
 var _results2 = _interopRequireDefault(_results);
 
-var _router = __webpack_require__(2);
+var _router = __webpack_require__(3);
 
 var _router2 = _interopRequireDefault(_router);
 
-var _app = __webpack_require__(5);
+var _app = __webpack_require__(6);
 
 var _app2 = _interopRequireDefault(_app);
 
@@ -596,16 +659,210 @@ window.addEventListener('DOMContentLoaded', function () {
 });
 
 /***/ }),
-/* 7 */
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _uiblock = __webpack_require__(1);
+
+var _uiblock2 = _interopRequireDefault(_uiblock);
+
+var _uianswer = __webpack_require__(11);
+
+var _uianswer2 = _interopRequireDefault(_uianswer);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var UIAnswer = function (_UIBlock) {
+  _inherits(UIAnswer, _UIBlock);
+
+  function UIAnswer(node) {
+    _classCallCheck(this, UIAnswer);
+
+    var _this = _possibleConstructorReturn(this, (UIAnswer.__proto__ || Object.getPrototypeOf(UIAnswer)).call(this, node));
+
+    _this.answerText = "answer";
+    _this.answerType = "checkbox";
+    _this.answerName = "name";
+    _this.answerChecked = "false";
+
+    node.addEventListener('click', function (event) {
+      _this.onChoice(event.target.value);
+    });
+    return _this;
+  }
+
+  _createClass(UIAnswer, [{
+    key: 'render',
+    value: function render() {
+      this.node.innerHTML = (0, _uianswer2.default)({});
+    }
+  }, {
+    key: 'start',
+    value: function start() {}
+  }]);
+
+  return UIAnswer;
+}(_uiblock2.default);
+
+exports.default = UIAnswer;
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _uiquestion = __webpack_require__(12);
+
+var _uiquestion2 = _interopRequireDefault(_uiquestion);
+
+var _uiblock = __webpack_require__(1);
+
+var _uiblock2 = _interopRequireDefault(_uiblock);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var UIQuestion = function (_UIBlock) {
+    _inherits(UIQuestion, _UIBlock);
+
+    function UIQuestion(node) {
+        _classCallCheck(this, UIQuestion);
+
+        var _this = _possibleConstructorReturn(this, (UIQuestion.__proto__ || Object.getPrototypeOf(UIQuestion)).call(this, node));
+
+        _this.questionTitle = "Question Title", _this.questionBody = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea expedita magnam libero ut autem aperiam velit minus nobis recusandae modi adipisci, voluptatem minima error deleniti ratione asperiores illum molestiae quaerat.";
+        return _this;
+    }
+
+    _createClass(UIQuestion, [{
+        key: 'render',
+        value: function render(state) {
+            this.node.innerHTML = (0, _uiquestion2.default)({});
+        }
+    }]);
+
+    return UIQuestion;
+}(_uiblock2.default);
+
+exports.default = UIQuestion;
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var URL = 'https://js20170727quiz-9acd.restdb.io/rest/quiz';
+var apiKey = '59c92ddf04067cfd77ad9ac4';
+
+var Quiz = function () {
+    function Quiz() {
+        _classCallCheck(this, Quiz);
+    }
+
+    _createClass(Quiz, [{
+        key: 'fetch',
+        value: function (_fetch) {
+            function fetch() {
+                return _fetch.apply(this, arguments);
+            }
+
+            fetch.toString = function () {
+                return _fetch.toString();
+            };
+
+            return fetch;
+        }(function () {
+
+            return fetch(URL, {
+                headers: {
+                    'x-apikey': apiKey
+                },
+                mode: 'cors'
+            }).then(function (res) {
+                return res.json();
+            }).then(function (res) {
+                res = res.map(function (item) {
+                    item.data = JSON.parse(item.data);
+                    return item;
+                });
+
+                return res;
+            });
+        })
+    }]);
+
+    return Quiz;
+}();
+
+exports.default = Quiz;
+
+/***/ }),
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var pug = __webpack_require__(0);
 
-function template(locals) {var pug_html = "", pug_mixins = {}, pug_interp;;var locals_for_with = (locals || {});(function (number) {pug_html = pug_html + "\u003Cdiv class=\"question\"\u003E\u003Ch2\u003EВопрос № " + (pug.escape(null == (pug_interp = number) ? "" : pug_interp)) + "\u003C\u002Fh2\u003E\u003Cdiv class=\"question__navigate\"\u003E\u003Ca href=\"#results\"\u003EК результатам\u003C\u002Fa\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E";}.call(this,"number" in locals_for_with?locals_for_with.number:typeof number!=="undefined"?number:undefined));;return pug_html;};
+function template(locals) {var pug_html = "", pug_mixins = {}, pug_interp;;var locals_for_with = (locals || {});(function (answerChecked, answerName, answerText, answerType) {pug_html = pug_html + "\u003Clabel class=\"answer answer--checkbox\"\u003E" + (pug.escape(null == (pug_interp = answerText) ? "" : pug_interp)) + "\u003Cinput" + (pug.attr("type", `${answerType}`, true, true)+pug.attr("name", `${answerName}`, true, true)+pug.attr("checked", `${answerChecked}`, true, true)) + "\u003E\u003Cdiv class=\"answer__indicator\"\u003E\u003C\u002Fdiv\u003E\u003C\u002Flabel\u003E";}.call(this,"answerChecked" in locals_for_with?locals_for_with.answerChecked:typeof answerChecked!=="undefined"?answerChecked:undefined,"answerName" in locals_for_with?locals_for_with.answerName:typeof answerName!=="undefined"?answerName:undefined,"answerText" in locals_for_with?locals_for_with.answerText:typeof answerText!=="undefined"?answerText:undefined,"answerType" in locals_for_with?locals_for_with.answerType:typeof answerType!=="undefined"?answerType:undefined));;return pug_html;};
 module.exports = template;
 
 /***/ }),
-/* 8 */
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var pug = __webpack_require__(0);
+
+function template(locals) {var pug_html = "", pug_mixins = {}, pug_interp;;var locals_for_with = (locals || {});(function (questionBody, questionTitle) {pug_html = pug_html + "\u003Csection class=\"question\"\u003E\u003Ch1 class=\"question__title\"\u003E" + (pug.escape(null == (pug_interp = questionTitle) ? "" : pug_interp)) + "\u003C\u002Fh1\u003E\u003Cp class=\"question__text\"\u003E" + (pug.escape(null == (pug_interp = questionBody) ? "" : pug_interp)) + "\u003C\u002Fp\u003E\u003C\u002Fsection\u003E";}.call(this,"questionBody" in locals_for_with?locals_for_with.questionBody:typeof questionBody!=="undefined"?questionBody:undefined,"questionTitle" in locals_for_with?locals_for_with.questionTitle:typeof questionTitle!=="undefined"?questionTitle:undefined));;return pug_html;};
+module.exports = template;
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var pug = __webpack_require__(0);
+
+function template(locals) {var pug_html = "", pug_mixins = {}, pug_interp;pug_html = pug_html + "\u003Cdiv class=\"question\"\u003E\u003Cdiv class=\"question__info js-info\"\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"question__options js-options\"\u003E\u003C\u002Fdiv\u003E\u003Cdiv class=\"question__navigate\"\u003E\u003Ca href=\"#results\"\u003EК результатам\u003C\u002Fa\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E";;return pug_html;};
+module.exports = template;
+
+/***/ }),
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var pug = __webpack_require__(0);
@@ -614,11 +871,11 @@ function template(locals) {var pug_html = "", pug_mixins = {}, pug_interp;;var l
 module.exports = template;
 
 /***/ }),
-/* 9 */
+/* 15 */
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=app.js.mapS
+//# sourceMappingURL=app.js.map
