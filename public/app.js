@@ -335,7 +335,7 @@ function pug_rethrow(err, filename, lineno, str){
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -343,24 +343,24 @@ var _createClass = function () { function defineProperties(target, props) { for 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var View = function () {
-    function View(node) {
-        _classCallCheck(this, View);
+  function View(node) {
+    _classCallCheck(this, View);
 
-        this.node = node;
+    this.node = node;
+  }
+
+  _createClass(View, [{
+    key: "toggle",
+    value: function toggle(state) {
+      this.node.hidden = !state;
+
+      if (state) {
+        this.render();
+      }
     }
+  }]);
 
-    _createClass(View, [{
-        key: "toggle",
-        value: function toggle(state) {
-            this.node.hidden = !state;
-
-            if (state) {
-                this.render();
-            }
-        }
-    }]);
-
-    return View;
+  return View;
 }();
 
 exports.default = View;
@@ -455,7 +455,7 @@ exports.default = Router;
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -477,24 +477,24 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var VQuestion = function (_View) {
-    _inherits(VQuestion, _View);
+  _inherits(VQuestion, _View);
 
-    function VQuestion(node) {
-        _classCallCheck(this, VQuestion);
+  function VQuestion(node) {
+    _classCallCheck(this, VQuestion);
 
-        return _possibleConstructorReturn(this, (VQuestion.__proto__ || Object.getPrototypeOf(VQuestion)).call(this, node));
+    return _possibleConstructorReturn(this, (VQuestion.__proto__ || Object.getPrototypeOf(VQuestion)).call(this, node));
+  }
+
+  _createClass(VQuestion, [{
+    key: 'render',
+    value: function render(state) {
+      this.node.innerHTML = (0, _question2.default)({
+        number: 1
+      });
     }
+  }]);
 
-    _createClass(VQuestion, [{
-        key: 'render',
-        value: function render(state) {
-            this.node.innerHTML = (0, _question2.default)({
-                number: 1
-            });
-        }
-    }]);
-
-    return VQuestion;
+  return VQuestion;
 }(_view2.default);
 
 exports.default = VQuestion;
@@ -610,7 +610,7 @@ module.exports = template;
 
 var pug = __webpack_require__(0);
 
-function template(locals) {var pug_html = "", pug_mixins = {}, pug_interp;;var locals_for_with = (locals || {});(function (result) {pug_html = pug_html + "\u003Cdiv class=\"results\"\u003E\u003Ch2\u003EПоздравляем не вы прошли тест\u003C\u002Fh2\u003E\u003Cdiv class=\"results__count\"\u003E" + (pug.escape(null == (pug_interp = result) ? "" : pug_interp)) + "\u003C\u002Fdiv\u003E\u003Cdiv class=\"results__navigate\"\u003E\u003Ca href=\"#question\"\u003EК вопросам\u003C\u002Fa\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E";}.call(this,"result" in locals_for_with?locals_for_with.result:typeof result!=="undefined"?result:undefined));;return pug_html;};
+function template(locals) {var pug_html = "", pug_mixins = {}, pug_interp;;var locals_for_with = (locals || {});(function (result) {pug_html = pug_html + "\u003Cdiv class=\"results\"\u003E\u003Ch2\u003EПоздравляем  вы прошли тест\u003C\u002Fh2\u003E\u003Cdiv class=\"results__count\"\u003E" + (pug.escape(null == (pug_interp = result) ? "" : pug_interp)) + "\u003C\u002Fdiv\u003E\u003Cdiv class=\"results__navigate\"\u003E\u003Ca href=\"#question\"\u003EК вопр\u003C\u002Fa\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E";}.call(this,"result" in locals_for_with?locals_for_with.result:typeof result!=="undefined"?result:undefined));;return pug_html;};
 module.exports = template;
 
 /***/ }),
@@ -621,4 +621,4 @@ module.exports = template;
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=app.js.map
+//# sourceMappingURL=app.js.mapS
