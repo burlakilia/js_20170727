@@ -1,7 +1,11 @@
-label.answer.answer--checkbox #{answerText}
-  input(
-    type=`${answerType}`
-    name=`${answerName}`
-    checked=`${answerChecked}`
-    )
-  div.answer__indicator
+form.js-form
+  ul
+    each val, index in answers
+      label.answer.answer--checkbox #{val}
+        input(
+          type='radio'
+          name='test'
+          value=`${index}`
+        )
+        div.answer__indicator
+  button(type=submit) Ответить

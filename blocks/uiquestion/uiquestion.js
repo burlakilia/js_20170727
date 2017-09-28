@@ -1,17 +1,23 @@
 import template from './uiquestion.pug';
-import UIBlock from '../uiblock'
+import UIBlock from '../uiblock';
+import './uiquestion.scss';
 
 export default class UIQuestion extends UIBlock{
 
-    constructor(node) {
+
+    /**
+     * @param {Element} node
+     * @param {Object} data
+     * @param {string} data.title - заголовок
+     * @param {string} data.desc - описание вопроса
+     */
+    constructor(node, data) {
         super(node);
-        this.questionTitle = "Question Title",
-        this.questionBody = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea expedita magnam libero ut autem aperiam velit minus nobis recusandae modi adipisci, voluptatem minima error deleniti ratione asperiores illum molestiae quaerat."
+        this.data = data;
     }
 
     render(state) {
-        this.node.innerHTML = template({
-        });
+        this.node.innerHTML = template(this.data);
     }
 
 }

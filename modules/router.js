@@ -24,7 +24,18 @@ export default class Router {
      * @return {Object}
      */
     [pParseHash](hash) {
-        return {id: hash, args: []};
+        // #hash/1/1/1/ 1 - n
+        let segments = hash.match(/^([^\/]+)(.*)/i);
+        let id, args = [];
+
+        if (segments.length && segments[2]) {
+            args = segments[2].split('/');
+            args = args.filter(item => !!item);
+        }
+
+        id = segments[1];
+
+        return {id, args};
     }
 
     onRoute(hash) {

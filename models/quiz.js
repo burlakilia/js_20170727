@@ -3,6 +3,10 @@ const apiKey = '59c92ddf04067cfd77ad9ac4';
 
 export default class Quiz {
 
+    constructor() {
+        this.results = {};
+    }
+
     fetch() {
 
         return fetch(URL, {
@@ -21,6 +25,14 @@ export default class Quiz {
                 return res;
             });
 
+    }
+
+    addResult(testId, questionId, variant) {
+        this.results[testId] = {
+            [questionId]: variant
+        };
+
+        console.log('addresult', this.results);
     }
 
 }

@@ -1,29 +1,24 @@
 import UIBlock from '../uiblock';
 import template from './uianswer.pug';
+import './uianswer.scss';
 
 export default class UIAnswer extends UIBlock {
 
-  constructor(node) {
-    super(node);
-    this.answerText = "answer";
-    this.answerType = "checkbox";
-    this.answerName = "name";
-    this.answerChecked = "false";
+    constructor(node, data) {
+        super(node);
+        this.data = data;
+    }
 
+    render() {
+        this.node.innerHTML = template(this.data);
+        let form = document.querySelector('form');
 
-    node.addEventListener('click', (event) => {
-      this.onChoice(event.target.value);
-    })
-  }
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            this.onSubmit(form.elements.test.value);
+        });
+    }
 
-  render() {
-    this.node.innerHTML = template({
-
-    });
-  }
-
-  start() {
-
-  }
+    onSubmit(value) {}
 
 }

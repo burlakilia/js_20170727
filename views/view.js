@@ -4,11 +4,11 @@ export default class View {
     this.node = node;
   }
 
-  toggle(state) {
+  toggle(state, args) {
     this.node.hidden = !state;
 
     if (state) {
-      this.render();
+      this.render(args);
     }
   }
 

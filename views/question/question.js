@@ -11,29 +11,32 @@ export default class VQuestion extends View {
         this.model = new Model();
     }
 
-    render(state) {
+    async render(args) {
+
         this.node.innerHTML = template({
             number: 1
         });
 
-        this.model.fetch().then(data =>{
-            console.log(data);
+        let data = await this.model.fetch();
+        let testData = data[0];
+        let question = testData.data[+args[1] - 1];
 
-            let quest = new UIQuestion(this.node.querySelector('.js-info'), {
+        let quest = new UIQuestion(this.node.querySelector('.js-info'), {
+            title: `Вопрос N${args[0]}`,
+            desc: question.question
+        });
 
-            });
+        let answers = new UIAnswer(this.node.querySelector('.js-answers'), {
+            answers: question.answers.map(item => item.value)
+        });
 
-            let answers = new UIAnswer(this.node.querySelector('.js-options'), {
+        quest.render();
+        answers.render();
 
-            });
-
-            answers.onChoice = function (number, val) {
-                console.log('user choice is', val);
-
-                this.model.addAswer(number, val);
-            };
-        })
-
+        answers.onSubmit = (value) => {
+            this.model.addResult(args[0], args[1], value);
+            location.href = './#question/1/2';
+        }
 
     }
 
